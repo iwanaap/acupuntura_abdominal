@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acupuntura Abdominal - Técnica de la Tortuga</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="ingreso-datos" id="ingreso-datos">
+            <h1>Acupuntura Abdominal - Técnica de la Tortuga</h1>
+            <label for="unidad">Unidad de medida:</label>
+            <select id="unidad">
+                <option value="1">Centímetros</option>
+                <option value="0.1">Milímetros</option>
+            </select>
+
+            <label for="medicion1">Del centro del ombligo a la apófisis xifoides:</label>
+            <input type="number" id="medicion1" placeholder="Ingrese la medida">
+
+            <label for="medicion2">Del centro del ombligo al borde lateral del abdomen:</label>
+            <input type="number" id="medicion2" placeholder="Ingrese la medida">
+
+            <label for="medicion3">Del centro del ombligo a la sínfisis del pubis:</label>
+            <input type="number" id="medicion3" placeholder="Ingrese la medida">
+
+            <button onclick="calcularCUN()">Calcular</button>
+        </div>
+
+        <div class="resultados-tortuga" id="tortuga" style="display: none;">
+            <div class="result" id="result"></div>
+            <div class="mapa-tortuga" style="background-image: url('abdomen.png'); background-size: cover; background-position: center;"></div>
+</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
