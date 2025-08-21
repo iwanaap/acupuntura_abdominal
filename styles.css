@@ -2,7 +2,29 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    b.punto {
+    position: absolute;
+    width: 3%;
+    height: 3%;
+    min-width: 16px;
+    min-height: 16px;
+    background-color: red;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    touch-action: manipulation;
+}
+
+.punto:hover, .punto:active {
+    background-color: darkred;
+    transform: scale(1.2);
+    z-index: 2;
+}#f4f4f9;
     color: #333;
     display: flex;
     flex-direction: column;
@@ -152,4 +174,111 @@ button:hover {
 
 .text-results p {
     margin: 10px;
+}
+
+/* Media queries para diseño responsive */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+    .punto, .punto-riñon, .punto-ab, .punto-estomago {
+        width: 4%;
+        height: 4%;
+        min-width: 20px;
+        min-height: 20px;
+        font-size: 10px;
+    }
+    #info-popup {
+        width: 80%;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 5px;
+    }
+    h1 {
+        font-size: 1.5em;
+        margin: 10px 0;
+    }
+    .punto, .punto-riñon, .punto-ab, .punto-estomago {
+        width: 5%;
+        height: 5%;
+        min-width: 24px;
+        min-height: 24px;
+        font-size: 8px;
+    }
+    .text-results {
+        font-size: 0.9em;
+    }
+    #info-popup {
+        width: 90%;
+        font-size: 13px;
+        padding: 15px;
+    }
+    input, select, button {
+        margin-bottom: 15px;
+        font-size: 16px;
+    }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+    .container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+    .ingreso-datos {
+        width: 45%;
+        margin-right: 2%;
+    }
+    .resultados-tortuga {
+        width: 50%;
+    }
+    .mapa-tortuga {
+        max-height: 80vh;
+    }
+}
+
+/* Mejoras de accesibilidad y experiencia de usuario */
+.mapa-tortuga {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#info-popup {
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+#close-popup {
+    padding: 10px 20px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#close-popup:hover {
+    background-color: #c82333;
+}
+
+/* Optimizaciones para dispositivos táctiles */
+@media (hover: none) {
+    .punto, .punto-riñon, .punto-ab, .punto-estomago {
+        transition: none;
+    }
+    
+    .punto:active, .punto-riñon:active, .punto-ab:active, .punto-estomago:active {
+        transform: scale(1.2);
+    }
 }
